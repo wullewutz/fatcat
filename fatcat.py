@@ -2,24 +2,24 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 df = pd.read_csv('fatcat.dat', index_col=0, sep=' ')
-fig, axes = plt.subplots(nrows=3, ncols=1)
+fig, axes = plt.subplots(nrows=2, ncols=1)
 
 axes[0].set_title('Gewicht absolut')
 axes[0].set_ylabel('g')
-df.plot(ax=axes[0], marker='o', lw=3.0)
+df.plot(ax=axes[0], marker='o', lw=2.0)
 axes[0].set_xlabel('')
 axes[0].grid(True, axis='y')
 
 axes[1].set_title('Gewichtszuwachs')
 axes[1].set_ylabel('g/Tag')
-df.diff().plot.bar(ax=axes[1])
+df.diff().plot(ax=axes[1], marker='o', lw=2.0)
 axes[1].set_xlabel('')
 axes[1].grid(True, axis='y')
 
-axes[2].set_title('Milchleistung')
-axes[2].set_ylabel('g/Tag')
-df.diff().plot.area(ax=axes[2], stacked=True)
-axes[2].grid(True, axis='y')
+# axes[2].set_title('Milchleistung')
+# axes[2].set_ylabel('g/Tag')
+# df.diff().plot.area(ax=axes[2], stacked=False)
+# axes[2].grid(True, axis='y')
 
 fig.suptitle('Kalis Kätzlich', fontsize = 20, fontweight='bold')
 plt.show()
