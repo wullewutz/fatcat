@@ -16,10 +16,5 @@ df.diff().plot(ax=axes[1], marker='o', lw=2.0)
 axes[1].set_xlabel('')
 axes[1].grid(True, axis='y')
 
-# axes[2].set_title('Milchleistung')
-# axes[2].set_ylabel('g/Tag')
-# df.diff().plot.area(ax=axes[2], stacked=False)
-# axes[2].grid(True, axis='y')
-
 fig.suptitle('Kalis Kätzlich', fontsize = 20, fontweight='bold')
 plt.show()
